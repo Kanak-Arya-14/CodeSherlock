@@ -1,9 +1,22 @@
+from urllib.parse import urlparse
+
+
 class RepositoryService:
 
-    def analyze(self, repo_url: str):
+    def analyze(self, repo_url):
+
+        repo_url = str(repo_url)
+
+        parsed_url = urlparse(repo_url)
+
+        path_parts = parsed_url.path.strip("/").split("/")
+
+        owner = path_parts[0]
+        repository = path_parts[1]
 
         return {
             "status": "received",
-            "repo_url": repo_url,
-            "message": "Repository queued for analysis"
+            "owner": owner,
+            "repository": repository,
+            "repo_url": repo_url
         }

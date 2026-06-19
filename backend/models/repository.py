@@ -1,5 +1,5 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, HttpUrl
 
 
 class RepositoryRequest(BaseModel):
-    repo_url: str
+    repo_url: HttpUrl
