@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
-from models.repository import RepositoryRequest
-from services.repository_service import RepositoryService
+from app.models.repository import RepositoryRequest
+from app.services.repository_service import RepositoryService
 
 app = FastAPI()
 
