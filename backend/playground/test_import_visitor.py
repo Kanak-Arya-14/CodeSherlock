@@ -1,6 +1,6 @@
 import ast
 
-from backend.app.services.import_graph_analyzer import ImportVisitor
+from backend.app.services.import_visitor import ImportVisitor
 
 code = """
 import os

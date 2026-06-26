@@ -31,3 +31,34 @@ class ImportVisitor(ast.NodeVisitor):
             self.imports.append(info)
 
         self.generic_visit(node)
+
+    def visit_ImportFrom(self, node):
+      """
+      Handles:
+
+        from pathlib import Path
+
+        from app.services.github_service import GitHubService
+
+        from app.models.tech_stack import TechStack
+      """
+
+      module = node.module
+
+      for alias in node.names:
+
+        info = ImportInfo(
+
+            module=module,
+
+            imported_name=alias.name,
+
+            alias=alias.asname,
+
+            level=node.level
+
+        )
+
+        self.imports.append(info)
+
+      self.generic_visit(node)   
