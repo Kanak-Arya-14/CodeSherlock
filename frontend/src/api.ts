@@ -1,6 +1,6 @@
 import type { RepositoryResponse, ChatResponse } from "./types";
 
-const BASE_URL = "http://127.0.0.1:8000";
+const BASE_URL = "https://codesherlock-backend.onrender.com";
 
 export async function analyzeRepository(repoUrl: string) {
 
